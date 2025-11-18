@@ -7,30 +7,37 @@ class AppTheme {
   static const Color midnight = Color(0xFF2D2A3A);
 
   static ThemeData buildTheme() {
-    final base = ThemeData.light(useMaterial3: true);
-    return base.copyWith(
+    final colorScheme = ColorScheme.fromSeed(
+      seedColor: airyBlue,
+      brightness: Brightness.light,
+      primary: airyBlue,
+      secondary: midnight,
+      background: blushPink,
+      surface: Colors.white,
+    );
+
+    final textTheme = TextTheme(
+      displayLarge: GoogleFonts.crimsonPro(
+        fontWeight: FontWeight.w600,
+        color: midnight,
+      ),
+      bodyLarge: GoogleFonts.figtree(
+        fontSize: 16,
+        color: midnight,
+      ),
+      bodyMedium: GoogleFonts.figtree(
+        fontSize: 14,
+        color: midnight,
+      ),
+    );
+
+    return ThemeData(
+      useMaterial3: true,
       scaffoldBackgroundColor: blushPink,
-      colorScheme: base.colorScheme.copyWith(
-        primary: airyBlue,
-        secondary: midnight,
-        surface: Colors.white,
-      ),
-      textTheme: TextTheme(
-        displayLarge: GoogleFonts.crimsonPro(
-          fontWeight: FontWeight.w600,
-          color: midnight,
-        ),
-        bodyLarge: GoogleFonts.figtree(
-          fontSize: 16,
-          color: midnight,
-        ),
-        bodyMedium: GoogleFonts.figtree(
-          fontSize: 14,
-          color: midnight,
-        ),
-      ),
+      colorScheme: colorScheme,
+      textTheme: textTheme,
       appBarTheme: AppBarTheme(
-        backgroundColor: Colors.white.withOpacity(0.95),
+        backgroundColor: const Color.fromRGBO(255, 255, 255, 0.95),
         foregroundColor: midnight,
         centerTitle: true,
         elevation: 0,
