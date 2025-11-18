@@ -7,17 +7,18 @@ class AppTheme {
   static const Color midnight = Color(0xFF2D2A3A);
 
   static ThemeData buildTheme() {
-    final colorScheme = ColorScheme.fromSeed(
-      seedColor: airyBlue,
+    final base = ThemeData(
+      useMaterial3: true,
+      colorSchemeSeed: airyBlue,
       brightness: Brightness.light,
-      primary: airyBlue,
-      secondary: midnight,
-      background: blushPink,
-      surface: Colors.white,
     );
 
     final textTheme = TextTheme(
       displayLarge: GoogleFonts.crimsonPro(
+        fontWeight: FontWeight.w600,
+        color: midnight,
+      ),
+      titleLarge: GoogleFonts.crimsonPro(
         fontWeight: FontWeight.w600,
         color: midnight,
       ),
@@ -31,13 +32,20 @@ class AppTheme {
       ),
     );
 
-    return ThemeData(
-      useMaterial3: true,
+    final mergedScheme = base.colorScheme.copyWith(
+      primary: airyBlue,
+      secondary: midnight,
+      surface: Colors.white,
+      background: blushPink,
+    );
+
+    return base.copyWith(
       scaffoldBackgroundColor: blushPink,
-      colorScheme: colorScheme,
-      textTheme: textTheme,
-      appBarTheme: AppBarTheme(
-        backgroundColor: const Color.fromRGBO(255, 255, 255, 0.95),
+      colorScheme: mergedScheme,
+      textTheme: base.textTheme.merge(textTheme),
+      appBarTheme: base.appBarTheme.copyWith(
+        backgroundColor: Colors.white,
+        surfaceTintColor: Colors.transparent,
         foregroundColor: midnight,
         centerTitle: true,
         elevation: 0,
@@ -47,11 +55,12 @@ class AppTheme {
           color: midnight,
         ),
       ),
-      cardTheme: CardTheme(
+      cardTheme: base.cardTheme.copyWith(
         color: Colors.white,
         elevation: 4,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(28),
+        surfaceTintColor: Colors.transparent,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(28)),
         ),
       ),
     );
