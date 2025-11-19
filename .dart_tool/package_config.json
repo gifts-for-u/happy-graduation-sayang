@@ -15,7 +15,7 @@
     },
     {
       "name": "carousel_slider",
-      "rootUri": "file:///C:/Users/Lenovo/AppData/Local/Pub/Cache/hosted/pub.dev/carousel_slider-4.2.1",
+      "rootUri": "file:///C:/Users/Lenovo/AppData/Local/Pub/Cache/hosted/pub.dev/carousel_slider-5.1.1",
       "packageUri": "lib/",
       "languageVersion": "2.12"
     },
@@ -39,7 +39,7 @@
     },
     {
       "name": "confetti",
-      "rootUri": "file:///C:/Users/Lenovo/AppData/Local/Pub/Cache/hosted/pub.dev/confetti-0.7.0",
+      "rootUri": "file:///C:/Users/Lenovo/AppData/Local/Pub/Cache/hosted/pub.dev/confetti-0.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.17"
     },
