@@ -46,3 +46,29 @@ Assets are already wired through `pubspec.yaml`. Drop your own JPEGs into `asset
    flutter pub get
    ```
 6. Launch or test the updated code as usual with `flutter run` or `flutter test`.
+
+## Troubleshooting: Gradle 8.13 requirement
+If you hit an error similar to `Minimum supported Gradle version is 8.13. Current version is 8.10` while running `flutter run`
+or debugging on Android, follow these steps:
+
+1. **(Re)generate the Android folder** – this repo keeps only the cross-platform Dart code. In your local checkout run:
+   ```bash
+   flutter create .
+   ```
+   Flutter will scaffold the missing `android/` directory for you.
+2. **Bump the Gradle wrapper to 8.13** – edit `android/gradle/wrapper/gradle-wrapper.properties` and change the
+   `distributionUrl` line to:
+   ```
+   distributionUrl=https\://services.gradle.org/distributions/gradle-8.13-bin.zip
+   ```
+   This ensures both your app module and any plugins (e.g., `path_provider_android`) run with a compatible Gradle version.
+3. **Clean and fetch dependencies** – remove stale build artifacts and re-download packages:
+   ```bash
+   flutter clean
+   flutter pub get
+   ```
+4. **Retry the build** – run `flutter run` again. There is no need to delete your entire `~/.pub-cache`; the error is
+   resolved once the project uses Gradle 8.13 or newer.
+
+If the problem persists, run `flutter pub cache repair` to make sure cached plugins were downloaded correctly, then repeat
+the steps above.

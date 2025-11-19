@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import 'screens/ar_redirect_screen.dart';
 import 'screens/congrats_screen.dart';
@@ -16,19 +15,16 @@ class GraduationApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiProvider(
-      providers: const [],
-      child: MaterialApp(
-        title: 'Happy Graduation',
-        debugShowCheckedModeBanner: false,
-        theme: AppTheme.buildTheme(),
-        home: const SplashScreen(),
-        routes: {
-          '/gallery': (_) => const GalleryScreen(),
-          '/congrats': (_) => const CongratsScreen(),
-          '/ar': (_) => const ArRedirectScreen(),
-        },
-      ),
+    return MaterialApp(
+      title: 'Happy Graduation',
+      debugShowCheckedModeBanner: false,
+      theme: AppTheme.buildTheme(),
+      home: const SplashScreen(),
+      routes: {
+        '/gallery': (_) => const GalleryScreen(),
+        '/congrats': (_) => const CongratsScreen(),
+        '/ar': (_) => const ArRedirectScreen(),
+      },
     );
   }
 }
