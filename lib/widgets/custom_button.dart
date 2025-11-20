@@ -6,33 +6,60 @@ class CustomButton extends StatelessWidget {
     required this.label,
     required this.onPressed,
     this.icon,
+    this.backgroundColor,
+    this.textColor,
+    this.padding,
+    this.width,
+    this.height,
   });
 
   final String label;
   final VoidCallback onPressed;
   final IconData? icon;
+  final Color? backgroundColor;
+  final Color? textColor;
+  final EdgeInsetsGeometry? padding;
+  final double? width;
+  final double? height;
 
   @override
   Widget build(BuildContext context) {
-    return ElevatedButton.icon(
-      style: ElevatedButton.styleFrom(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-        foregroundColor: Colors.white,
-        padding: const EdgeInsets.symmetric(horizontal: 28, vertical: 16),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(40),
-        ),
-        elevation: 2,
+    final buttonStyle = ElevatedButton.styleFrom(
+      backgroundColor: backgroundColor ?? Theme.of(context).colorScheme.primary,
+      foregroundColor: textColor ?? Colors.white,
+      padding:
+          padding ?? const EdgeInsets.symmetric(horizontal: 28, vertical: 8),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(40),
       ),
-      onPressed: onPressed,
-      icon: icon != null ? Icon(icon) : const SizedBox.shrink(),
-      label: Text(
-        label,
-        style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-            ),
-      ),
+      elevation: 2,
+    );
+
+    final buttonLabel = Text(
+      label,
+      style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+            color: textColor ?? Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
+    );
+
+    final button = icon != null
+        ? ElevatedButton.icon(
+            style: buttonStyle,
+            onPressed: onPressed,
+            icon: Icon(icon),
+            label: buttonLabel,
+          )
+        : ElevatedButton(
+            style: buttonStyle,
+            onPressed: onPressed,
+            child: buttonLabel,
+          );
+
+    return SizedBox(
+      width: width,
+      height: height,
+      child: button,
     );
   }
 }
