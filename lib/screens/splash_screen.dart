@@ -10,55 +10,24 @@ class SplashScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
     return Scaffold(
-      body: SafeArea(
+      backgroundColor: AppTheme.blushPink,
+      body: Center(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 32),
+          padding: const EdgeInsets.symmetric(horizontal: 32),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Text(
-                'Happy Graduation, Sayang!',
-                style: textTheme.displayLarge?.copyWith(fontSize: 40),
-              ),
-              const SizedBox(height: 16),
-              Text(
-                'Rayakan pencapaianmu dengan galeri kenangan dan kejutan kecil dari aku. '
-                'Swipe, senyum, dan rasakan cinta di setiap slide.',
-                style: textTheme.bodyLarge,
+                'Halo sayangg, Happy Graduation for Youu❣️',
+                textAlign: TextAlign.center,
+                style: textTheme.displayLarge?.copyWith(fontSize: 32),
               ),
               const SizedBox(height: 32),
-              Row(
-                children: [
-                  Expanded(
-                    child: CustomButton(
-                      label: 'Lihat Galeri',
-                      icon: Icons.photo_library_rounded,
-                      onPressed: () => Navigator.pushNamed(context, '/gallery'),
-                    ),
-                  ),
-                  const SizedBox(width: 16),
-                  Expanded(
-                    child: CustomButton(
-                      label: 'Coba Filter AR',
-                      icon: Icons.filter_vintage_rounded,
-                      onPressed: () => Navigator.pushNamed(context, '/ar'),
-                    ),
-                  ),
-                ],
-              ),
-              const SizedBox(height: 24),
-              Center(
-                child: TextButton(
-                  onPressed: () => Navigator.pushNamed(context, '/congrats'),
-                  child: Text(
-                    'Lihat ucapan spesial →',
-                    style: textTheme.bodyLarge?.copyWith(
-                      color: AppTheme.midnight,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
+              CustomButton(
+                label: 'Mulai lihat hadiah',
+                icon: Icons.arrow_forward_rounded,
+                onPressed: () => Navigator.pushReplacementNamed(context, '/main'),
               ),
             ],
           ),

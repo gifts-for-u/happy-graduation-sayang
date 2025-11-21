@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'screens/ar_redirect_screen.dart';
 import 'screens/congrats_screen.dart';
 import 'screens/gallery_screen.dart';
+import 'screens/main_screen.dart';
 import 'screens/splash_screen.dart';
 import 'theme.dart';
 
@@ -21,6 +22,7 @@ class GraduationApp extends StatelessWidget {
       theme: AppTheme.buildTheme(),
       home: const SplashScreen(),
       routes: {
+        '/main': (_) => const MainScreen(),
         '/gallery': (_) => const GalleryScreen(),
         '/congrats': (_) => const CongratsScreen(),
         '/ar': (_) => const ArRedirectScreen(),

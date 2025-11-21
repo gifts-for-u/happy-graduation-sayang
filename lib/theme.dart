@@ -36,6 +36,7 @@ class AppTheme {
       primary: airyBlue,
       secondary: midnight,
       surface: Colors.white,
+      background: blushPink,
     );
 
     return base.copyWith(

@@ -58,6 +58,21 @@ class _GalleryScreenState extends State<GalleryScreen> {
             if (provider.loading) {
               return const Center(child: CircularProgressIndicator());
             }
+            if (provider.error != null) {
+              return Center(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24),
+                  child: Text(
+                    provider.error!,
+                    style: Theme.of(context)
+                        .textTheme
+                        .bodyLarge
+                        ?.copyWith(color: Theme.of(context).colorScheme.error),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
+              );
+            }
             final memories = provider.memories ?? [];
             if (memories.isEmpty) {
               return const Center(child: Text('Belum ada memori.'));
