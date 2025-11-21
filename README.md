@@ -19,9 +19,8 @@ A small Flutter 3.24 app that celebrates graduation moments with a swipeable gal
    flutter run
    ```
 
-Assets are already wired through `pubspec.yaml`. The repo does **not** bundle example JPEGs; the `assets/images/` folder is
-kept in Git via a `.gitkeep` so you can drop in your own photos. Match the filenames in `assets/data/memories.json`
-(`01.jpg`, `02.jpg`, etc.) or update the JSON entries to reflect whatever files you add.
+Assets are already wired through `pubspec.yaml`. Drop your own JPEGs into `assets/images/` (matching the names referenced in
+`assets/data/memories.json`) to personalize the memories.
 
 ## Updating your local copy with new PR changes
 1. Make sure you are in the project root (the folder containing this README) inside a terminal.
