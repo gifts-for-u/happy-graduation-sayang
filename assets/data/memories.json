@@ -1,0 +1,26 @@
+[
+  {
+    "src": "assets/images/01.jpg",
+    "date": "2024-10-05",
+    "title": "Kelulusan di Kampus",
+    "caption": "Momen setelah wisuda di mana kita tertawa dan peluk erat."
+  },
+  {
+    "src": "assets/images/02.jpg",
+    "date": "2024-06-18",
+    "title": "Belajar Malam di Perpustakaan",
+    "caption": "Kopi sachet dan playlist lo-fi menemani persiapan sidangmu."
+  },
+  {
+    "src": "assets/images/03.jpg",
+    "date": "2023-12-24",
+    "title": "Rayakan Natal Bareng",
+    "caption": "Kita tukar kado sambil cerita resolusi tahun depan."
+  },
+  {
+    "src": "assets/images/04.jpg",
+    "date": "2023-08-14",
+    "title": "Roadtrip ke Pantai",
+    "caption": "Sunset biru muda jadi latar tawa kita sepanjang perjalanan."
+  }
+]

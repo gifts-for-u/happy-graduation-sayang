@@ -1,0 +1,10 @@
+# Flutter/Dart build
+build/
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+
+# Platform folders regenerated locally
+android/
+ios/
